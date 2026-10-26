@@ -1,0 +1,64 @@
+{
+  "create_note_request": {
+    "title": "Meeting Notes - Project Architecture",
+    "body": "Discussed moving thumbnail generation to an async queue.",
+    "is_pinned": true,
+    "tag_ids": [101, 104]
+  },
+  "create_note_response": {
+    "id": 42,
+    "user_id": 7,
+    "title": "Meeting Notes - Project Architecture",
+    "body": "Discussed moving thumbnail generation to an async queue.",
+    "is_pinned": true,
+    "is_archived": false,
+    "tags": [
+      { "id": 101, "name": "Work", "color_code": "#FF5733" },
+      { "id": 104, "name": "Architecture", "color_code": "#3357FF" }
+    ],
+    "created_at": "2026-10-26T18:00:00Z",
+    "updated_at": "2026-10-26T18:00:00Z"
+  },
+  "list_notes_response": {
+    "data": [
+      {
+        "id": 42,
+        "title": "Meeting Notes - Project Architecture",
+        "body": "Discussed moving thumbnail generation to an async queue.",
+        "is_pinned": true,
+        "is_archived": false,
+        "tags": ["Work", "Architecture"],
+        "created_at": "2026-10-26T18:00:00Z"
+      },
+      {
+        "id": 41,
+        "title": "Grocery List",
+        "body": "Milk, Eggs, Coffee beans",
+        "is_pinned": false,
+        "is_archived": false,
+        "tags": ["Personal"],
+        "created_at": "2026-10-25T14:30:00Z"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "limit": 2,
+      "total_records": 15,
+      "total_pages": 8
+    }
+  },
+  "error_response": {
+    "error": {
+      "status": 400,
+      "code": "INVALID_INPUT",
+      "message": "Validation failed for note creation.",
+      "details": [
+        {
+          "field": "title",
+          "message": "Title is required and must not exceed 100 characters."
+        }
+      ],
+      "timestamp": "2026-10-26T18:02:00Z"
+    }
+  }
+}
